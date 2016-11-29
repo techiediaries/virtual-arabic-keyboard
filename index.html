@@ -1,0 +1,54 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html lang="en" ng-app="myApp" class="no-js" ng-controller="ArabicKeyCtrl"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Arabic Keyboard</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles/bootstrap.min.css">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body  ng-csp="no-unsafe-eval">
+    <div class="section">
+        <div style="width:600px;margin: auto">
+            <div class="txtTools clearfix">
+                <div>
+                    <ul style="padding-left: 5px;margin-left: 3px;">
+                        <li><a target="_blank" href="http://www.arabickeyboard360.com"><img src="images/icon-32.png" alt="Arabic keyboard" /></a></li>
+                        <li><a target="_blank" href="https://translate.google.com/#ar/en/{[{text}]}">Translate </a></li>
+                        <li><a target="_blank" href="https://www.google.com/#q={[{text}]}">Google </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="txtWrapper">
+                <textarea dir="rtl" placeholder="..." ng-model="text" ng-change="convert()" auto-focus="autoFocus">
+                 </textarea>
+             </div>
+             <div>
+             	<div class="keysWrapper">
+             		<div style="width:100%;margin:auto">
+                 		<div class="keyWrapper">
+                 		<div class="clearfix">
+                 			<a ng-repeat="obj in shema" ng-click="translate(obj.arabic)" title="{[{obj.desc}]}">
+                 			<div class="arabicKey"><span>{[{ obj.arabic }]}</span></div>
+                 			<div class="tKey">
+                 				<ul>
+                 					<li ng-repeat="letter in obj.latin">{[{ letter }]}</li>
+                 				</ul>
+                 			</div>
+                 			</a>
+                 		</div>
+                 		</div>
+             		</div>
+             	</div>
+             </div>
+        </div>
+    </div>
+
+
+<script src="scripts/angular.js"></script>
+<script src="scripts/app.js"></script>
+<!--<script src="scripts/bootstrap.min.js"></script>-->
+
+</body>
+</html>
